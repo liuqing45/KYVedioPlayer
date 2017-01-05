@@ -534,10 +534,11 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
     }
     if (_currentItem) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_currentItem];
-        [_currentItem removeObserver:self forKeyPath:@"status"];
-        [_currentItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
-        [_currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
-        [_currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+        //返回crash
+//        [_currentItem removeObserver:self forKeyPath:@"status"];
+//        [_currentItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+//        [_currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
+//        [_currentItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
         _currentItem = nil;
     }
     _currentItem = currentItem;
